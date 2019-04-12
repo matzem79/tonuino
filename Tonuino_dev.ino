@@ -13,7 +13,7 @@
   |_| |___|_|_|_____|_____|_|___|_____|
   TonUINO Version 2.1
 
-  created by Thorsten VoÃƒÆ’Ã…Â¸ and licensed under GNU/GPL.
+  created by Thorsten Voß and licensed under GNU/GPL.
   Information and contribution at https://tonuino.de.
 */
 
@@ -499,7 +499,7 @@ void setup() {
     }
   */
   // Start Shortcut "at Startup" - e.g. Welcome Sound
-   playShortCut(3);
+  playShortCut(3);
 
   // Load last card from flash and play folder
   loadLastCardFromFlash();
@@ -871,18 +871,18 @@ void adminMenu() {
   } else if (subMenu == 2) {
     // Maximum Volume
     mySettings.maxVolume = voiceMenu(30, 930, 0, false, false,
-                                     1);
+                                     mySettings.maxVolume);
   } else if (subMenu == 3) {
     // Minimum Volume
     mySettings.minVolume = voiceMenu(30, 931, 0, false, false,
-                                     1);
+                                     mySettings.minVolume);
   } else if (subMenu == 4) {
     // Initial Volume
     mySettings.initVolume = voiceMenu(30, 932, 0, false, false,
-                                      1);
+                                      mySettings.initVolume);
   } else if (subMenu == 5) {
     // EQ
-    mySettings.eq = voiceMenu(6, 920, 920, false, false, 1);
+    mySettings.eq = voiceMenu(6, 920, 920, false, false, mySettings.eq);
     mp3.setEq(mySettings.eq - 1);
   } else if (subMenu == 6) {
     // create master card
